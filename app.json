@@ -15,16 +15,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gabriel.fluyo-test"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
+        "package": "com.gabriel.fluyo-test"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
+  },
+  "web": {
+    "favicon": "./assets/favicon.png"
   }
 }
+
