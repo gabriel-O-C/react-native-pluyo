@@ -9,10 +9,9 @@ class QuestionsService {
     querySnapshot.forEach((doc) => {
       let data = doc.data();
       let question: Question = data.questions
-        .flatMap((item: Question) => item)
       questions.push(question);
     });
-    return questions.flat(2)
+    return questions.flat(1)
     }
 }
 
