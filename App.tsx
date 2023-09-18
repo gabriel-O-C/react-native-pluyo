@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import theme from "./src/assets/styles/theme/theme";
+import { Question } from "./src/components/question/question";
 import useQuestions from "./src/hooks/useQuestions";
 
 export default function App() {
@@ -11,17 +12,7 @@ export default function App() {
         <View>
           <Text style={styles.text}>Fill in the missing word.</Text>
           {questions.map((question) => (
-            <>
-              <Text key={question.title} style={styles.question}>
-                {question.question}
-              </Text>
-              {question.alternatives.map((alternative: string) => (
-              <TouchableOpacity style={styles.alternativeWrapper}>
-                <Text style={styles.alternativeText}>{alternative}</Text>
-              </TouchableOpacity>
-
-              ))}
-            </>
+            <Question alternatives={question.alternatives} answer={question.answer} question={question.question} title={question.title} key={question.title}   />
           ))}
           <TouchableOpacity>
             <Text>Check answer</Text>
@@ -45,20 +36,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#fff",
-  },
-  question: {
-    color: "#fff",
-    fontSize: 28,
-  },
-  alternativeWrapper: {
-    backgroundColor: "#fff",
-    elevation: 10,
-    borderRadius: 30,
-    margin: 5,
-  },
-  alternativeText: {
     textAlign: 'center',
-    color: theme.colors.primary.main,
-    fontSize: 16
-  }
+    fontSize: 28
+  },
 });

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import questionService from "../services/questionService/questionService";
-import { Question } from "../types/question";
+import { Iquestion } from "../types/question";
 
 export default function useQuestions() {
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<Iquestion[]>([]);
 
   useEffect(() => {
     async function fetchData() {
